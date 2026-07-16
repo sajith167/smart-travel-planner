@@ -1,0 +1,254 @@
+.budget-page {
+  min-height: 100vh;
+  padding: 120px 0 80px;
+  position: relative;
+}
+
+.budget-page__bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(ellipse at 20% 50%, rgba(124,58,237,0.06) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(6,182,212,0.05) 0%, transparent 50%),
+              var(--gradient-hero);
+}
+
+.budget-empty {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 80px;
+}
+
+.budget-empty__icon { font-size: 4rem; margin-bottom: 16px; }
+
+/* Header */
+.budget-page__title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  margin: 12px 0;
+}
+
+.budget-page__subtitle {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+/* Trip Summary */
+.budget-trip-summary {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px 0 40px;
+}
+
+.budget-trip-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 50px;
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.budget-trip-item svg { color: var(--primary-light); }
+
+/* Total Banner */
+.budget-total-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 36px;
+  border-radius: var(--radius-md);
+  margin-bottom: 32px;
+  backdrop-filter: blur(20px);
+}
+
+.budget-total-banner--ok {
+  background: rgba(16,185,129,0.08);
+  border: 1px solid rgba(16,185,129,0.25);
+}
+
+.budget-total-banner--over {
+  background: rgba(239,68,68,0.08);
+  border: 1px solid rgba(239,68,68,0.25);
+  animation: pulse-danger 2s ease-in-out infinite;
+}
+
+@keyframes pulse-danger {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(239,68,68,0); }
+  50% { box-shadow: 0 0 0 6px rgba(239,68,68,0.1); }
+}
+
+.budget-total-banner__left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.budget-total-banner__icon { font-size: 2rem; }
+
+.budget-total-banner__label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.budget-total-banner__status {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+.budget-total-banner__right { text-align: right; }
+
+.budget-total-value {
+  font-size: 2.5rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #a78bfa, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.budget-total-percent {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Cost Cards */
+.budget-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.budget-cost-card {
+  padding: 24px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.budget-cost-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: var(--card-color);
+}
+
+.budget-cost-card__emoji { font-size: 1.8rem; margin-bottom: 8px; }
+
+.budget-cost-card__label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.budget-cost-card__value {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #f1f5f9;
+  margin-bottom: 12px;
+}
+
+.budget-cost-card__bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 50px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.budget-cost-card__fill {
+  height: 100%;
+  border-radius: 50px;
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.budget-cost-card__pct {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* Charts */
+.budget-charts {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.chart-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+}
+
+.donut-wrap {
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+/* Budget Progress */
+.budget-progress-card {
+  padding: 28px 32px;
+  margin-bottom: 32px;
+}
+
+.budget-progress-card__title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.budget-progress-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.budget-progress-row__label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* Actions */
+.budget-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1024px) {
+  .budget-cards-grid { grid-template-columns: repeat(2, 1fr); }
+  .budget-charts { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .budget-total-banner { flex-direction: column; gap: 20px; text-align: center; padding: 24px; }
+  .budget-total-banner__left { flex-direction: column; }
+  .budget-total-banner__right { text-align: center; }
+  .budget-cards-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .budget-cards-grid { grid-template-columns: 1fr; }
+}

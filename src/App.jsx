@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { FaPlane } from 'react-icons/fa';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import ErrorBoundary from './components/ErrorBoundary';
 import './App.css';
 
@@ -101,6 +102,7 @@ export default function App() {
     <Router>
       <ScrollToTop />
       <MainLayout />
+      <SpeedInsights />
     </Router>
   );
 }

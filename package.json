@@ -13,6 +13,7 @@
   "dependencies": {
     "@tsparticles/react": "^4.3.2",
     "@tsparticles/slim": "^4.3.2",
+    "@vercel/speed-insights": "^2.0.0",
     "chart.js": "^4.5.1",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
